@@ -28,6 +28,7 @@
             android:layout_height="wrap_content"
             style="@style/Widget.Design.FloatingActionButton"
             android:layout_margin="8dp"
+            app:backgroundTint="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
