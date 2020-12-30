@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PhotoAI</string>
+    <string name="select_image_from_gallery">Select Image from Gallery</string>
+    <string name="contains_text">Contains Text? </string>
 </resources>
