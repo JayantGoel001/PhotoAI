@@ -25,7 +25,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var switch:SwitchCompat
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         switch = findViewById(R.id.switch1)
         imageView = findViewById(R.id.imageView)
         switch.setOnClickListener{
@@ -51,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getImageFromData(data:Intent?):Bitmap{
+    private fun getImageFromData(data:Intent?):Bitmap?{
         val selectedImage = data?.data
         return MediaStore.Images.Media.getBitmap(this.contentResolver, selectedImage)
     }
@@ -97,9 +98,13 @@ class MainActivity : AppCompatActivity() {
             bitmap.apply {
                 imageView.setImageBitmap(this)
                 if (!isText){
-                    processImageTagging(bitmap)
+                    if (bitmap != null) {
+                        processImageTagging(bitmap)
+                    }
                 }else{
-                    startTextRecognizing(bitmap)
+                    if (bitmap != null) {
+                        startTextRecognizing(bitmap)
+                    }
                 }
             }
         }
