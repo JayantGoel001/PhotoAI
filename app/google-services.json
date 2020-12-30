@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "231711971044",
+    "project_id": "smile-detector-app-bdd1e",
+    "storage_bucket": "smile-detector-app-bdd1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231711971044:android:4ae127927c477293787ef1",
+        "android_client_info": {
+          "package_name": "com.example.photoai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231711971044-j77ve6l39c499ftlg5bgahrtcso0lci6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqur1Oq-FLIVvzZFwcBgKQfmUfzR8lcs0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231711971044-j77ve6l39c499ftlg5bgahrtcso0lci6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231711971044:android:86f4f2e401f04633787ef1",
+        "android_client_info": {
+          "package_name": "com.example.smiledetectorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231711971044-j77ve6l39c499ftlg5bgahrtcso0lci6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqur1Oq-FLIVvzZFwcBgKQfmUfzR8lcs0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231711971044-j77ve6l39c499ftlg5bgahrtcso0lci6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
