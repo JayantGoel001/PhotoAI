@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
         tools:ignore="AllowBackup">
+        <meta-data
+        android:name="com.firebase.ml.cloud.ApiKeyForDebug"
+        android:value="" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

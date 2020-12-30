@@ -8,6 +8,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +17,7 @@ import com.example.photoai.databinding.ActivityMainBinding
 import com.google.android.material.chip.Chip
 import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
+import com.google.firebase.ml.vision.label.FirebaseVisionCloudImageLabelerOptions
 import com.google.firebase.ml.vision.text.FirebaseVisionText
 
 class MainActivity : AppCompatActivity() {
@@ -39,7 +41,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun processImageTagging(bitmap: Bitmap){
         val visionImage = FirebaseVisionImage.fromBitmap(bitmap)
-        FirebaseVision.getInstance().cloudImageLabeler.processImage(visionImage).addOnSuccessListener { tags ->
+        val optionsBuilder = FirebaseVisionCloudImageLabelerOptions.Builder()
+        if (!BuildConfig.DEBUG) {
+            optionsBuilder.enforceCertFingerprintMatch()
+        }
+
+        optionsBuilder.setConfidenceThreshold(0.5f)
+        val options = optionsBuilder.build()
+        FirebaseVision.getInstance().getCloudImageLabeler(options).processImage(visionImage).addOnSuccessListener { tags ->
             binding.chipGroup.removeAllViews()
             tags.sortByDescending { it.confidence }
             tags.map {
@@ -49,6 +58,7 @@ class MainActivity : AppCompatActivity() {
             }
         }.addOnFailureListener{
             Toast.makeText(this,it.message.toString(),Toast.LENGTH_LONG).show()
+            Log.i("TAGSTAGS",it.message.toString())
         }
     }
 
